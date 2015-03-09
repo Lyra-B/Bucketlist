@@ -1,5 +1,3 @@
 class BucketListsController < ApplicationController
-  # def show
-  #   @traveller = current_traveller
-  # end
+  @activities = current_traveller.activities.includes(:destination)
 end

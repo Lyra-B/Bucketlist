@@ -1,5 +1,5 @@
 %h2 My Amazing Bucket List
 %ol
-  - current_traveller.activities.each do |activity|
+  - @activities.each do |activity|
     %li
       = render activity
