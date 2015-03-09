@@ -1,5 +1,4 @@
 Feature: Registration
-
   Scenario: A traveller registers with the site
     Given I am on the homepage
       And I go to the sign-up page
