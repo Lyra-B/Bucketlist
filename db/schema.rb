@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309142158) do
+ActiveRecord::Schema.define(version: 20150309144657) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "destination_id"
+    t.string   "name"
   end
 
   create_table "bucket_list_items", force: :cascade do |t|
