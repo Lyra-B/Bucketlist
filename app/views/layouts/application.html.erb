@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="flash">
+    <span class="notice"><%= notice %></span>
+    <span class="alert"><%= alert %></span>
+  <header>
+    <%= link_to 'Sign up', new_traveller_registration_path %>
+  </header>
 
 <%= yield %>
 
