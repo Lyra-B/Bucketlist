@@ -12,7 +12,7 @@ When(/^they add a destination$/) do
 end
 
 When(/^they add an activity$/) do
-  within("#destination_#{@italy.id}") do
+  within(".add-activity") do
     fill_in "Name", :with => "Eat Pasta"
     fill_in "Image URL", :with => "http://example.org/image.jpg"
     click_button "Add Activity"

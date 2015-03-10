@@ -1,12 +1,11 @@
 %h2 My Amazing Bucket List
-%ol
-  - @activities.each do |activity|
-    %li
-      = render activity
 %ul#destinations
   - @destinations.each do |destination|
     %li.destination{:id => ["destination", destination.id]}
-      .activities
+      %ol.activities
+        - destination.activities.each do |activity|
+          %li
+            = render activity
       / Add the newly created activity here.
       .add-activity
         = form_for @activity do |f|
