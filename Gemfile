@@ -19,4 +19,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'shoulda-matchers', require: false
+  gem 'selenium-webdriver'
 end
