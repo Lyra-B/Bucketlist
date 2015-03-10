@@ -1,0 +1,15 @@
+$(document).ready(function(){
+  $('#add-destination-button').click(function(event){
+    event.preventDefault();
+      $.ajax ({
+      url: '/destinations',
+      type: 'POST',
+      data: $('form').serialize(),
+      success: function(html) {
+        $('#destinations').append(html);
+      }
+    });
+  });
+});
+
+

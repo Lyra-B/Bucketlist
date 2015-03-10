@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   resource :bucket_list, :only => :show
 
+  resources :destinations, :only => :create
+
   root 'welcome#index'
 end
