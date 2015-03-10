@@ -4,6 +4,27 @@
     %li
       = render activity
 %ul#destinations
+  - @destinations.each do |destination|
+    %li.destination{:id => ["destination", destination.id]}
+      .activities
+      / Add the newly created activity here.
+      .add-activity
+        = form_for @activity do |f|
+          %fieldset
+            = f.label :name
+            = f.text_field :name
+
+          %fieldset
+            = f.label :image_url, "Image URL"
+            = f.text_field :image_url
+
+            = f.hidden_field :destination_id, :value => destination.id
+
+          = f.submit "Add Activity"
+      /Todo Create a form that sends Ajax to rails and created an activity
+      /1. Create the activity
+      /2. Make sure that the activity belongs to the destination
+      /3.Add the activity to the relevant destination
 
 #add-destination
   = form_for @destination do |f|

@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :destinations, :only => :create
 
+  resources :activities, :only => :create
+
   root 'welcome#index'
 end
