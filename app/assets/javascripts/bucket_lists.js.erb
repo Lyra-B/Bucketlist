@@ -1,38 +1,38 @@
-$(document).ready(function(){
-  $('#add-destination-button').click(function(event){
-    event.preventDefault();
-      $.ajax ({
-      url: '/destinations',
-      type: 'POST',
-      data: $('form').serialize(),
-      dataType: "html",
-      success: function(html) {
-        $('#destinations').append(html);
-      }
-    });
-  });
-// });
-
 // $(document).ready(function(){
-  $('.new_activity').submit(function(event){
-    event.preventDefault();
+//   $('#add-destination-button').click(function(event){
+//     event.preventDefault();
+//       $.ajax ({
+//       url: '/destinations',
+//       type: 'POST',
+//       data: $('form').serialize(),
+//       dataType: "html",
+//       success: function(html) {
+        // $('#destinations').append(html);
+//       }
+//     });
+//   });
+// // });
 
-    var _this = this;
-    // var fk = $(this).find('.activity_destination_id').val();
+// // $(document).ready(function(){
+//   $('.new_activity').submit(function(event){
+//     event.preventDefault();
+
+//     var _this = this;
+//     // var fk = $(this).find('.activity_destination_id').val();
 
 
-      $.ajax ({
-      url: '/activities',
-      type: 'POST',
-      data: $(this).serialize(),
-      dataType: "html",
-      success: function(html) {
-        $(_this).closest('li.destination').find('.activities').append(html);
-        // $('#destination_' + fk + ' .activities').append(html);
-        // $('.activities').append(html);
-      }
-    });
-  });
-});
+//       $.ajax ({
+//       url: '/activities',
+//       type: 'POST',
+//       data: $(this).serialize(),
+//       dataType: "html",
+//       success: function(html) {
+        // $(_this).closest('li.destination').find('.activities').append(html);
+//         // $('#destination_' + fk + ' .activities').append(html);
+//         // $('.activities').append(html);
+//       }
+//     });
+//   });
+// });
 
 

@@ -1,0 +1,6 @@
+$('#destinations').append('<%= j(render @destination) %>').
+find(".destination:last-child").hide().fadeIn();
+
+$('#flash .notice').html("Your destination <%= @destination.name %> was added");
+
+$('.new_destination input[type="text"]').val('');

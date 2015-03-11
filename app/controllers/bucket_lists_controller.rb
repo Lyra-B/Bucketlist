@@ -6,3 +6,8 @@ class BucketListsController < ApplicationController
     @activity = Activity.new
   end
 end
+
+
+
+
+
