@@ -30,3 +30,9 @@ Then(/^it should appear on the page$/) do
   expect(page.has_content?("India")).to be true
   expect(page.has_css?("img[src='http://example.org/image.jpg']")).to be true
 end
+
+Then(/^the activity is stored in the traveller's bucketlist$/) do
+  # save_and_open_page
+  # binding.pry
+  expect(@traveller.reload.activities.length > 1).to be true
+end

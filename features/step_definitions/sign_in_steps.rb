@@ -8,6 +8,7 @@ end
 
 Given(/^a traveller who has added an item to their bucketlist$/) do
   @traveller = Traveller.create!(:email => "test@example.org", :password => "password", :password_confirmation => "password")
+  # binding.pry
   @traveller.activities << @drive_ferrari
 end
 

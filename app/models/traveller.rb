@@ -13,4 +13,7 @@ class Traveller < ActiveRecord::Base
   has_many :activities, :through => :bucket_list_items
   has_many :destinations, :through => :activities
 
+  # accepts_nested_attributes_for :bucket_list_items
+  # accepts_nested_attributes_for :activities
+
 end

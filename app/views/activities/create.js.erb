@@ -1,5 +1,6 @@
-$('.activities').append('<%= j(render @activity) %>').
-find(".activities:last-child").hide().fadeIn();
+// $('.activities').append('<%= j(render @activity) %>').
+// find(".activities:last-child").hide().fadeIn();
+$("#destination_<%= @activity.destination_id %> .activities").append('<%= j(render (@activity)) %>').find("li:last-child").hide().fadeIn(3000);
 
 $('#flash .notice').html("Your activity <%= @activity.name %> was added");
 

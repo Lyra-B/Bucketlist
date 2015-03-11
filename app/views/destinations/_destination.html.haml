@@ -1,4 +1,31 @@
-.destination
-  %h3= destination.name
+%li.destination{:id => ["destination", destination.id]}
+  %h3
+    = destination.name
 
   = image_tag destination.image_url
+
+  %ol.activities
+    - destination.activities.where(:destination_id => destination.id) do |activity|
+      %li
+        = render activity
+  / Add the newly created activity here.
+  .add-activity
+    = form_for make_activity(destination), :remote => true do |f|
+      %fieldset
+        = f.label :name
+        = f.text_field :name
+
+      %fieldset
+        = f.label :image_url, "Image URL"
+        = f.text_field :image_url
+
+        = f.hidden_field :destination_id, :value => destination.id
+
+        = f.fields_for :bucket_list_items do |b|
+          = b.hidden_field :traveller_id
+
+      = f.submit "Add Activity"
+  /Todo Create a form that sends Ajax to rails and created an activity
+  /1. Create the activity
+  /2. Make sure that the activity belongs to the destination
+  /3.Add the activity to the relevant destination

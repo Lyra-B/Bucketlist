@@ -16,3 +16,4 @@ Feature: Destinations
       And I sign in
     When they add an activity
     Then they see their activity under the relevant destination
+      And the activity is stored in the traveller's bucketlist
