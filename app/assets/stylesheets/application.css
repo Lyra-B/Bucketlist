@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+ul {
+  list-style: none;
+  /*background-image: url('../assets/trash_recyclebin_empty_closed.png');*/
+}
+
+ol {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+.new_destination {
+  width: 300px;
+  height: 60px;
+}
+
+.new_activity {
+  width: 300px;
+  height: 60px;
+}
+
+.image {
+  border-radius:15px;
+}
+
+.image-dest {
+  clear:both;
+  border-radius:15px;
+}
+
+.link {
+  transform: rotate(7px);
+}
+
+

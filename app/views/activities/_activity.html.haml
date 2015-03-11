@@ -4,6 +4,8 @@
   %p.destination
     In #{activity.destination.name}
 
-  = image_tag activity.image_url
+  = image_tag activity.image_url, :class => "image"
 
-  = link_to "Remove", activity_url(activity), :method => :delete, :remote => true
+  = link_to activity_url(activity), :class => "link", :method => :delete, :remote => true do
+    = image_tag("trash_recyclebin_empty_closed_w.png", :alt => "Remove Activity", width:"30px", height:"30px")
+
