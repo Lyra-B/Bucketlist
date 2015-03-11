@@ -5,7 +5,7 @@
   = image_tag destination.image_url
 
   %ol.activities
-    - destination.activities.where(:destination_id => destination.id) do |activity|
+    - destination.activities.each do |activity|
       %li
         = render activity
   / Add the newly created activity here.

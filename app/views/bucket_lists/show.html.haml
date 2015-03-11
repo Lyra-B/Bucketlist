@@ -2,8 +2,7 @@
 
 %ul#destinations
   - @destinations.each do |destination|
-    = render :partial => 'destinations/destination', :locals => { :destination => destination }
-
+    = render :partial => 'destinations/destination', :locals => { :destination => destination, :activities => @activities.select{|a| a.destination }}
 
 #add-destination
   = form_for @destination, :remote => true do |f|

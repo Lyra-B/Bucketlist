@@ -3,7 +3,7 @@ Given(/^some destinations with some bucketlist items$/) do
   @ride_elephant = Activity.create!(:name => "Ride an Elephant", :destination => @india)
 
   @italy = Destination.create!(:name => "Italy")
-  @drive_ferrari = Activity.create!(:name => "Drive a Ferrari", :destination => @india)
+  @drive_ferrari = Activity.create!(:name => "Drive a Ferrari", :destination => @italy)
 end
 
 Given(/^a traveller who has added an item to their bucketlist$/) do
@@ -23,11 +23,11 @@ When(/^I sign in$/) do
 end
 
 Then(/^I should see only my own bucketlist$/) do
-  # save_and_open_page
-  expect(page.has_content?(@italy.name)).to be false
-  expect(page.has_content?(@ride_elephant.name)).to be false
-
-  expect(page.has_content?(@india.name)).to be true
+  save_and_open_page
+  expect(page.has_content?(@italy.name)).to be true
   expect(page.has_content?(@drive_ferrari.name)).to be true
+
+  # expect(page.has_content?(@india.name)).to be false
+  # expect(page.has_content?(@ride_elephant.name)).to be false
 
 end
