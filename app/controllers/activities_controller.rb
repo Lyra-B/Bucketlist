@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
   def create
     @activity = Activity.create!(allowed_params)
-    render @activity
+    # render @activity
     # render :partial => 'activities/activity', :locals => { :activity => @activity }
   end
 

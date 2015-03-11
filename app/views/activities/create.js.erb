@@ -1,0 +1,6 @@
+$('.activities').append('<%= j(render @activity) %>').
+find(".activities:last-child").hide().fadeIn();
+
+$('#flash .notice').html("Your activity <%= @activity.name %> was added");
+
+$('.new_activity input[type="text"]').val('');

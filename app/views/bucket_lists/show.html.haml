@@ -3,7 +3,7 @@
   - @destinations.each do |destination|
     %li.destination{:id => ["destination", destination.id]}
       %ol.activities
-        - destination.activities.each do |activity|
+        - current_traveller.activities.where(:destination_id => destination).each do |activity|
           %li
             = render activity
       / Add the newly created activity here.
