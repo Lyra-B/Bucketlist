@@ -1,7 +1,10 @@
 class ActivitiesController < ApplicationController
   def create
     @activity = Activity.create!(allowed_params)
-    # binding.pry
+    binding.pry
+    @lats = Activity.all.map{|a| a.latitude}
+    @longs = Activity.all.map{|a| a.longitude}
+    @lat_lng = [@lats, @longs].transpose
     # render @activity
     # render :partial => 'activities/activity', :locals => { :activity => @activity }
     # binding.pry
