@@ -4,7 +4,6 @@ function BucketListMap(latitude, longitude, zoom_level){
 }
 var map;
 BucketListMap.prototype.drawMap = function(id){
-  // var millLatLng = new google.maps.LatLng(52.1512817, -0.3153073)
 
   var mapOptions = {
     center: this.center,
