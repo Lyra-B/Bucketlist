@@ -4,4 +4,6 @@ $("#destination_<%= @activity.destination_id %> .activities").append('<%= j(rend
 
 $('#flash .notice').html("Your activity <%= @activity.name %> was added");
 
+map.addMarker(<%= @activity.latitude %>, <%= @activity.longitude %>, "<%= @activity.name %>");
+
 $('.new_activity input[type="text"]').val('');

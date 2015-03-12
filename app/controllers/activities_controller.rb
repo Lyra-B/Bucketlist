@@ -4,6 +4,7 @@ class ActivitiesController < ApplicationController
     # binding.pry
     # render @activity
     # render :partial => 'activities/activity', :locals => { :activity => @activity }
+    # binding.pry
   end
 
   def destroy
