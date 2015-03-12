@@ -12,8 +12,10 @@ RSpec.describe Activity, type: :model do
     end
 
     it "geocodes the activity using the location and destination" do
-      expect(@activity.latitude).to eq(19.0759837)
-      expect(@activity.longitude).to eq(72.8776559)
+      # expect(@activity.latitude.round(7).to_f).to eq(19.0759837)
+      # expect(@activity.longitude.round(7).to_f).to eq(72.8776559)
+      expect(@activity.latitude.round(7)).to eq(BigDecimal.new(19.0759837, 9))
+      expect(@activity.longitude.round(7)).to eq(BigDecimal.new(72.8776559, 9))
     end
 
     it "generates an input string for use with the Google API" do

@@ -1,5 +1,8 @@
 %h2 My Amazing Bucket List
 
+#map-canvas
+
+
 %ul#destinations
   - @destinations.each do |destination|
     = render :partial => 'destinations/destination', :locals => { :destination => destination, :activities => @activities.select{|a| a.destination }}
