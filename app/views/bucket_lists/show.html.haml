@@ -1,15 +1,6 @@
 %h2 My Amazing Bucket List
 
-#map-canvas
-%script(type="text/javascript")
-  $(document).ready(function(){
-  map = new BucketListMap(52.1512817, -0.3153073,4);
-  map.drawMap('mapCanvas');
-  var LatLngArray = #{raw @lat_lng_nam};
-  for (i = 0; i < LatLngArray.length; i++) {
-  return map.addMarker(parseFloat(LatLngArray[i][0]), parseFloat(LatLngArray[i][1]), LatLngArray[i][2]);
-  };
-  });
+#map-canvas{:data => {:activities => @activities_objects,:traveller_id => current_traveller.id}}
 
   //This approach works only for the first marker
   //For some reason the loop doesn't work

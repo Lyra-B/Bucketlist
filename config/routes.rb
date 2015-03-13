@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :destinations, :only => :create
 
-  resources :activities, :only => [:create, :destroy]
+  resources :activities, :only => [:create, :destroy, :index]
 
   root 'welcome#index'
 end
