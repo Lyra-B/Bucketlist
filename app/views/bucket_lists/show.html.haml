@@ -11,6 +11,10 @@
   };
   });
 
+  //This approach works only for the first marker
+  //For some reason the loop doesn't work
+  // However, I will try to use the different approach with data attributes.
+
 %ul#destinations
   - @destinations.each do |destination|
     = render :partial => 'destinations/destination', :locals => { :destination => destination, :activities => @activities.select{|a| a.destination }}
