@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resource :bucket_list, :only => :show
 
-  resources :destinations, :only => :create
+  resources :destinations, :only => [:create, :destroy]
 
   resources :activities, :only => [:create, :destroy, :index]
 

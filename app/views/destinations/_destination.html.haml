@@ -4,6 +4,9 @@
 
   = image_tag destination.image_url, :class => "image-dest"
 
+  = link_to destination_url(destination), :class => "link", :method => :delete, :remote => true do
+    = image_tag("trash_recyclebin_empty_closed_w.png", :alt => "Remove Activity", width:"30px", height:"30px")
+
   %ol.activities
     - destination.activities.each do |activity|
       %li

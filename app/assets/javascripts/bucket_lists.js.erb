@@ -2,7 +2,6 @@ $(document).ready(function(){
   map = new BucketListMap(52.1512817, -0.3153073,4);
   map.drawMap('mapCanvas');
   var travellerId = $('#map-canvas').data("traveller_id");
-  var latLngArray = $('#map-canvas').data("activities");
   map.loadMarkers(travellerId);
 
   // for (i = 0; i < LatLngArray.length; i++) {
