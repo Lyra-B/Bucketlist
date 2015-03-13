@@ -15,9 +15,11 @@ BucketListMap.prototype.drawMap = function(id){
   this.map = new google.maps.Map(mapCanvas, mapOptions);
 }
 
-BucketListMap.prototype.addMarker = function(latitude,longitude,title){
+BucketListMap.prototype.addMarker = function(latitude,longitude,title, image_url){
+  var modalContent = '<div id="description">'+'<h1>' + title + '</h1>'+'<img src="'+ image_url + '",alt=""/>'+'</div>'
+
   var modal = new google.maps.InfoWindow({
-      content: '<p>Hello!<p>'
+      content: modalContent
   });
 
   var marker = new google.maps.Marker({
@@ -42,7 +44,7 @@ BucketListMap.prototype.loadMarkers = function(travellerId){
     },
     success: function(){
       for (i = 0; i < latLngArray.length; i++) {
-        _this.addMarker(latLngArray[i].latitude, latLngArray[i].longitude, latLngArray[i].name);
+        _this.addMarker(latLngArray[i].latitude, latLngArray[i].longitude, latLngArray[i].name, latLngArray[i].image_url);
       };
     }
   })
