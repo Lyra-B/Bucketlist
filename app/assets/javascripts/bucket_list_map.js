@@ -16,15 +16,19 @@ BucketListMap.prototype.drawMap = function(id){
 }
 
 BucketListMap.prototype.addMarker = function(latitude,longitude,title){
+  var modal = new google.maps.InfoWindow({
+      content: '<p>Hello!<p>'
+  });
+
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(latitude, longitude),
     map: this.map,
     title: title
-  })
+  });
 
   google.maps.event.addListener(marker, 'click', function(){
-    console.log("clicked");
-  })
+    modal.open(this.map,marker)
+  });
 }
 
 BucketListMap.prototype.loadMarkers = function(travellerId){
