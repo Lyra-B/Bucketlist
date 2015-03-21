@@ -2,6 +2,13 @@
 
 #map-canvas{:data => {:activities => @activities_objects,:traveller_id => current_traveller.id}}
 
+= form_tag activities_order_bucket_list_path, :method=>:get, :remote => true do
+  %fieldset
+    = label_tag "Order by:"
+    = select_tag "order", options_for_select([ "Priority", "Name", "Most Recently Added" ], "Priority")
+    = submit_tag "Order"
+
+
   //This approach works only for the first marker
   //For some reason the loop doesn't work
   // However, I will try to use the different approach with data attributes.
