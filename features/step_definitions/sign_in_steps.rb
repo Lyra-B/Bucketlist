@@ -23,7 +23,7 @@ When(/^I sign in$/) do
 end
 
 Then(/^I should see only my own bucketlist$/) do
-  save_and_open_page
+  # save_and_open_page
   expect(page.has_content?(@italy.name)).to be true
   expect(page.has_content?(@drive_ferrari.name)).to be true
 
