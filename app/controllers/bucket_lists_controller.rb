@@ -4,6 +4,7 @@ class BucketListsController < ApplicationController
     @destinations = Destination.all
     @activity = Activity.new
     @activities = current_traveller.activities.includes(:destination).order(:destination_id)
+    # binding.pry
     @activities_objects = current_traveller.activities.all.to_json(:only=>[:latitude,:longitude, :name, :image_url])
     @destination.activities.map{ |a| a.destination }
     # @lats = Activity.all.map{|a| a.latitude}
@@ -12,6 +13,12 @@ class BucketListsController < ApplicationController
     # @lat_lng_nam = [@lats, @lngs, @names].transpose.to_json
     # binding.pry
     # binding.pry
+  end
+
+  def order
+    @destinations = Destination.includes(:activities)
+    # binding.pry
+    @order = params[:order].downcase.to_sym
   end
 end
 
