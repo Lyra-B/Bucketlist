@@ -1,7 +1,7 @@
 class DestinationsController < ApplicationController
   def create
     @destination = Destination.find_or_create_by!(allowed_params)
-    binding.pry
+    # binding.pry
     # render :partial => 'destinations/destination', :locals => { :destination => @destination }
     # render @destination
   end

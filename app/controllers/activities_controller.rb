@@ -17,6 +17,9 @@ class ActivitiesController < ApplicationController
     render :json => Activity.all.to_json(:only=>[:latitude,:longitude, :name])
   end
 
+  def order
+    # binding.pry
+  end
 
   def destroy
     @activity = Activity.find(params[:id])
