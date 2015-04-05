@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312115303) do
+ActiveRecord::Schema.define(version: 20150321203226) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "created_at",     null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150312115303) do
     t.string   "location"
     t.decimal  "latitude"
     t.decimal  "longitude"
+    t.integer  "priority"
   end
 
   create_table "bucket_list_items", force: :cascade do |t|
