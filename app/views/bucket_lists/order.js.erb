@@ -1,7 +1,4 @@
-$('#destinations').replaceWith(
-  "<ul><div id=destinations><% @destinations.each do |destination|%>
-    <%= j(render :partial => 'destinations/destination',
-      :locals => { :destination => destination, :order => @order}) %>
-    <% end %></div></ul>"
+$('#destinations')empty().append(
+  "<ul><div id=destinations><%= @destinations.each do |destination|%><%= j(render :partial => 'destinations/destination',:locals => {:destination => destination, :activities => destination.activities.order(@order)}) %><% end %></div></ul>"
   );
 
