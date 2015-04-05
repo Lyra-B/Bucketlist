@@ -8,7 +8,7 @@
     = image_tag("trash_recyclebin_empty_closed_w.png", :alt => "Remove Activity", width:"30px", height:"30px")
 
   %ol.activities
-    - destination.activities.each do |activity|
+    - activities.each do |activity|
       %li
         = render activity
   / Add the newly created activity here.
@@ -31,7 +31,12 @@
         = f.fields_for :bucket_list_items do |b|
           = b.hidden_field :traveller_id
 
+      %fieldset
+        = f.select :priority, options_for_select(@priorities.collect {|p| [p[0].humanize, p[0]]})
+
       = f.submit "Add Activity"
+
+
   /Todo Create a form that sends Ajax to rails and created an activity
   /1. Create the activity
   /2. Make sure that the activity belongs to the destination
