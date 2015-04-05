@@ -8,6 +8,12 @@ class Activity < ActiveRecord::Base
   geocoded_by :geocode_input
   before_save :geocode
 
+  enum priority: [:high, :medium, :low]
+
+  validates :name, presence: true
+  validates :location, presence: true
+  validates :image_url, presence: true
+
   protected
   def geocode_input
     "#{self.location}, #{self.destination.name}"
