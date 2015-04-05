@@ -27,6 +27,12 @@ li {
   display: inline-block;
 }
 
+#order-by {
+  margin-top: 50px;
+  width: 305px;
+  height: 36px;
+}
+
 .new_destination {
   width: 300px;
   height: 60px;
