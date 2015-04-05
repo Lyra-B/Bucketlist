@@ -2,20 +2,15 @@
 
 #map-canvas{:data => {:activities => @activities_objects,:traveller_id => current_traveller.id}}
 
-= form_tag activities_order_bucket_list_path, :method=>:get, :remote => true do
+= form_tag activities_order_bucket_list_path, :id => 'order-by', :method=>:get, :remote => true do
   %fieldset
     = label_tag "Order by:"
     = select_tag "order", options_for_select([ "Priority", "Name", "Most Recently Added" ], "Priority")
     = submit_tag "Order"
 
-
-  //This approach works only for the first marker
-  //For some reason the loop doesn't work
-  // However, I will try to use the different approach with data attributes.
-
 %ul#destinations
   - @destinations.each do |destination|
-    = render :partial => 'destinations/destination', :locals => { :destination => destination, :activities => @activities.select{|a| a.destination }}
+    = render :partial => 'destinations/destination', :locals => { :destination => destination, :activities => destination.activities.order(:priority)}
 
 #add-destination
   = form_for @destination, :remote => true do |f|
