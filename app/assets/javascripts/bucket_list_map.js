@@ -4,6 +4,7 @@ function BucketListMap(latitude, longitude, zoom_level){
 }
 
 var map;
+
 BucketListMap.prototype.drawMap = function(id){
 
   var mapOptions = {
@@ -34,8 +35,8 @@ BucketListMap.prototype.addMarker = function(latitude,longitude,title, image_url
 }
 
 BucketListMap.prototype.loadMarkers = function(travellerId){
-  var _this = this
   var latLngArray = $('#map-canvas').data("activities");
+  var _this = this;
   $.ajax ({
     url: '/activities',
     type: 'GET',
@@ -45,9 +46,10 @@ BucketListMap.prototype.loadMarkers = function(travellerId){
     success: function(){
       for (i = 0; i < latLngArray.length; i++) {
         _this.addMarker(latLngArray[i].latitude, latLngArray[i].longitude, latLngArray[i].name, latLngArray[i].image_url);
+        if(_this.map.getBounds().contains(new google.maps.LatLng(parseFloat(latLngArray[i].latitude),parseFloat(latLngArray[i].longitude)))){
+          $('#show-current-marker').append('<p>' + latLngArray[i].name + '</p>');
+        }
       };
     }
   })
 }
-
-// new google.maps.LatLng(latitude, longitude)
