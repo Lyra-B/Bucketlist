@@ -53,3 +53,19 @@ BucketListMap.prototype.loadMarkers = function(travellerId){
     }
   })
 }
+
+BucketListMap.prototype.inBoundsMarkers = function(){
+  map = this.map
+  var latLngArray = $('#map-canvas').data("activities");
+  google.maps.event.addListener(map, 'bounds_changed', function(){
+    $('#show-current-marker').empty();
+    for (i = 0; i < latLngArray.length; i++) {
+      if(map.getBounds().contains(new google.maps.LatLng(parseFloat(latLngArray[i].latitude),parseFloat(latLngArray[i].longitude)))){
+        $('#show-current-marker').append('<p>' + latLngArray[i].name + '</p>');
+      }
+    };
+  });
+}
+
+
+

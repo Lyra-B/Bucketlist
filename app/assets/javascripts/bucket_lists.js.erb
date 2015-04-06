@@ -3,4 +3,5 @@ $(document).ready(function(){
   map.drawMap('mapCanvas');
   var travellerId = $('#map-canvas').data("traveller_id");
   map.loadMarkers(travellerId);
+  map.inBoundsMarkers();
 });
