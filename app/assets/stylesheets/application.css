@@ -16,6 +16,11 @@
 
 #map-canvas {
   float: left;
+  margin-bottom: 30px;
+}
+
+#destinations {
+  margin-top: 50px;
 }
 
 ul {
@@ -32,6 +37,8 @@ li {
 }
 
 #order-by {
+  clear:both;
+  display:block;
   margin-top: 50px;
   width: 305px;
   height: 36px;
