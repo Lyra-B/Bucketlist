@@ -4,7 +4,7 @@ class BucketListsController < ApplicationController
     @destinations = Destination.all
     @activity = Activity.new
     # @activities = current_traveller.activities.includes(:destination).order(:priority)
-    @activities_objects = current_traveller.activities.all.to_json(:only=>[:latitude,:longitude, :name, :image_url])
+    @activities_objects = Activity.all.to_json(:only=>[:latitude,:longitude, :name, :image_url])
     @destination.activities.map{ |a| a.destination }
     @priorities = Activity.priorities
   end
