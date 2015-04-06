@@ -14,6 +14,10 @@
  *= require_self
  */
 
+#map-canvas {
+  float: left;
+}
+
 ul {
   list-style: none;
   /*background-image: url('../assets/trash_recyclebin_empty_closed.png');*/
@@ -54,5 +58,13 @@ li {
 
 .link {
   transform:rotate(7px);
+}
+
+#show-current-marker {
+  background-color:#B4CDCD;
+  width: 300px;
+  height: 300px;
+  float:left;
+  margin-left: 10px;
 }
 
